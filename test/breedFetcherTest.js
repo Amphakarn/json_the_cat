@@ -14,11 +14,11 @@ describe('fetchBreedDescription', () => {
   });
 
   it('returns an invalid/non-existent breed, via callback', (done) => {
-    fetchBreedDescription('Dolphin', (err) => {
+    fetchBreedDescription('Dolphin', (err, desc) => {
       assert.equal(err, `Value does not exist!`);
       const expectedDesc = null;
       // compare returned description
-      assert.equal(expectedDesc, null);
+      assert.equal(expectedDesc, desc);
 
       done();
     });
